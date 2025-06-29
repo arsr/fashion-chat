@@ -23,8 +23,9 @@ TOP_K      = 5
 
 valid_img = lambda u: u and u.strip() != "-" and u.strip().startswith("http") and u.strip().split(";")[0] or None
 
-load_dotenv()
-OPENAI_KEY = os.getenv("OPENAI_API_KEY")
+import streamlit as st
+import openai
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 if st is not None and st.runtime.exists():
 
