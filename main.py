@@ -25,7 +25,8 @@ valid_img = lambda u: u and u.strip() != "-" and u.strip().startswith("http") an
 
 import streamlit as st
 import openai
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+
+OPENAI_KEY = st.secrets["OPENAI_API_KEY"]
 
 if st is not None and st.runtime.exists():
 
